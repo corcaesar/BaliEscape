@@ -1,0 +1,555 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+:root {
+  --primary-color: #2193b0;
+  --secondary-color: #6dd5ed;
+  --accent-color: #4caf50;
+}
+
+/* Header Styles */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+body {
+  transition: opacity 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.logo h1 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/images/home.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+/* Menambahkan overlay gelap agar text lebih mudah dibaca */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+  padding: 5rem 5%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.features-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Activities Section */
+.activities {
+  padding: 5rem 5%;
+  background: #fff;
+}
+
+.activities-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.activity-card {
+  height: 200px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.activity-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.activity-card:hover img {
+  transform: scale(1.1);
+}
+
+.activity-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: #fff;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 5rem 5%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.faq-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.faq-grid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.faq-answer {
+  margin-top: 1rem;
+  display: none;
+  color: #666;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: #fff;
+  padding: 3rem 5%;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .features-grid,
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.features.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  opacity: 0;
+  width: 25vw;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.feature-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animasi untuk teks di hero section */
+.hero-content {
+  opacity: 0; /* Mulai tidak terlihat */
+  transform: translateY(20px); /* Bergeser ke bawah */
+  transition: opacity 2.0s ease, transform 2.0s ease; /* Transisi untuk opacity dan transform */
+}
+
+.hero-content.visible {
+  opacity: 1; /* Menjadi terlihat */
+  transform: translateY(0); /* Kembali ke posisi semula */
+}
+
+/* Hero section styling */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 20px; /* Sesuaikan padding sesuai kebutuhan */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e67e22;
+}
+
+/* Gaya dasar untuk FAQ */
+.faq {
+  opacity: 0; /* Mulai tidak terlihat */
+  transform: translateY(20px); /* Geser sedikit ke bawah */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Transisi untuk opacity dan transform */
+}
+
+/* Ketika FAQ terlihat */
+.faq.visible {
+  opacity: 1; /* Menjadi terlihat */
+  transform: translateY(0); /* Kembali ke posisi awal */
+}
+
+/* auth.css */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.auth-box {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-box h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.auth-form .form-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.auth-form input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 12px 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.forgot-password {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+}
+
+.auth-redirect {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.auth-redirect a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Add to your existing styles.css */
+.auth-link {
+  padding: 8px 16px !important;
+  border-radius: 5px;
+  transition: background-color 0.3s !important;
+}
+
+.auth-link.signup {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white !important;
+}
+
+.auth-link.active {
+  background-color: #eee;
+}
+
+@media (max-width: 768px) {
+  .auth-box {
+      padding: 20px;
+  }
+  
+  .form-options {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+  }
+}
